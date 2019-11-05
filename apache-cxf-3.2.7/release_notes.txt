@@ -1,0 +1,153 @@
+Apache CXF 3.2.7 Release Notes
+
+1. Overview
+
+The 3.2.x versios of Apache CXF is a significant new version of CXF
+that provides several new features and enhancements.  
+
+New features include: 
+* JAX-RS 2.1 (JSR370) support including the implementation of Reactive Client 
+  and Server Sent Events API
+* Enhanced Swagger2 support including new java2swagger Maven plugin
+* WS-Transfer specification support
+* Enhanced Tracing support with Brave
+* Support for Spring Boot 2.x
+* JAX-WS - support for per-operation schema validation configuration
+* WSS4J Signatures can support MTOM attachments
+* Preliminary support for running on Java 9  (no module support yet)
+* New http-undertow transport
+
+3.2.7 fixes over 38 JIRA issues reported by users and the community since 3.2.6.
+
+
+Important notes:
+CXF 3.2.x no longer supports Java 7.   You must upgrade to Java 8 or later.
+
+Users are encouraged to review the migration guide at:
+http://cxf.apache.org/docs/32-migration-guide.html
+for further information and requirements for upgrading from earlier
+versions of CXF.
+
+
+2. Installation Prerequisites 
+
+Before installing Apache CXF, make sure the following products,
+with the specified versions, are installed on your system:
+
+    * Java 8 Development Kit
+    * Apache Maven 3.x to build the samples
+
+
+3.  Integrating CXF Into Your Application
+
+If you use Maven to build your application, you need merely add
+appropriate dependencies. See the pom.xml files in the samples.
+
+If you don't use Maven, you'll need to add one or more jars to your
+classpath. The file lib/WHICH_JARS should help you decide which 
+jars you need.
+
+4. Building the Samples
+
+Building the samples included in the binary distribution is easy. Change to
+the samples directory and follow the build instructions in the README.txt file 
+included with each sample.
+
+5. Reporting Problems
+
+If you have any problems or want to send feedback of any kind, please e-mail the
+CXF dev list, dev@cxf.apache.org.  You can also file issues in JIRA at:
+
+http://issues.apache.org/jira/browse/CXF
+
+6. Migration notes:
+
+See the migration guide at:
+http://cxf.apache.org/docs/32-migration-guide.html
+for caveats when upgrading.
+
+
+7. Specific issues, features, and improvements fixed in this version
+
+** Bug
+* [CXF-7076] - Intermittent failure in WSDL cache
+* [CXF-7332] - JAXRS Client API doesnt support lambda
+* [CXF-7775] - embedded jetty websocket gets ClassCastException: org.eclipse.jetty.servlet.ServletContextHandler$Context cannot be cast to org.eclipse.jetty.webapp.WebAppContext$Context
+* [CXF-7820] - CXF BOM (cxf-parent) references non existing artifact (io.netty:netty:4.x)
+* [CXF-7823] - JAXBEncoderDecoder doesn't respect @XmlType's propOrder in Exception class
+* [CXF-7824] - CacheMap may have spurious null keys
+* [CXF-7831] - SocketTimeoutException when previous response was exactly chunk length bytes
+* [CXF-7832] - WrappedMessageContext containsKey not consistent with get/put
+* [CXF-7833] - Jetty session manager does not invalidate sessions
+* [CXF-7836] - Stax2 version conflict
+* [CXF-7837] - GZIPFeature Does Not Have @Provider Annotation
+* [CXF-7847] - DOMUtils init failed with IBM JDK
+* [CXF-7851] - NullPointerException in cxf-java2ws-plugin with more than one attachWsdl=true
+* [CXF-7854] - Refactor RxJava2 Flowable and Observable Rx Invokers to not use internal APIs.
+* [CXF-7857] - Mtom/XOP response contain wrong encoded Content-ID HTTP header (Rollback CXF-7317)
+* [CXF-7858] - Base64 empty string encoding issue
+* [CXF-7860] - JAX-RS @FormParam parameters are not updated when form content is modified
+* [CXF-7864] - STS: Expires lifetime is ignored if no lifetime created was specified
+* [CXF-7865] - Enable default ciphersuites exclusion filter
+* [CXF-7868] - MP Rest Client does not honor providers registered via MP Config
+* [CXF-7869] - Infinite loop in rest client
+* [CXF-7870] - JAXRSUtils referenced in AbstractBraveClientProvider
+* [CXF-7871] - WS-A RelatesTo headers missing in MAPCodec::getUnderstoodHeaders()
+* [CXF-7874] - JAX-RS SSE Leaking SSESink (s)
+* [CXF-7875] - ServiceList doesn't use proper bus to query if swagger/wadl is available.
+* [CXF-7878] - ClientPolicyCalculator ignores ConnectionRequestTimeout property
+* [CXF-7881] - HttpConduit.handleResponseOnWorkqueue will always handle response on current thread when allowCurrentThread is false and the work queue rejects the execution
+
+** New Feature
+* [CXF-5077] - Provide a way to define a specific SSLContext to be used by HTTPConduit implementations
+
+** Improvement
+* [CXF-7656] - Add jackson in the cxf-jaxrs feature
+* [CXF-7808] - Ensure org.apache.cxf.jaxrs.utils.InjectionUtils#injectThroughMethod logs an error
+* [CXF-7826] - Make it possible to configure Swagger UI features
+* [CXF-7827] - shouldn't log JMS password from JMS address when using JMS transport
+* [CXF-7829] - Use Spring Boot autoconfigure-processor to optimize auto-configurations
+* [CXF-7844] - Change Zipkin/Brave XML to use brave-spring-beans
+* [CXF-7853] - Spring Boot autoconfiguration should automatically set OpenApiCustomizer if OpenApiFeature is configured
+
+** Test
+* [CXF-7810] - SAML Assertion Cookie persistence - configurable to not persist across browser restarts
+
+** Task
+* [CXF-7806] - Add option to create JWT access tokens without persisting them
+* [CXF-7882] - FailoverTargetSelector uses the Exchange as the key in the inProgress map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

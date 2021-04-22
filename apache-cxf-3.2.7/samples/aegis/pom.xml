@@ -99,7 +99,7 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>3.2.7</version>
+            <version>3.4.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -109,14 +109,14 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
-            <version>3.2.7</version>
+            <version>3.4.3</version>
         </dependency>
         <!-- The server example in here launches the embedded jetty. Not needed
              if you deploy a WAR. -->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>3.2.7</version>
+            <version>3.4.3</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
